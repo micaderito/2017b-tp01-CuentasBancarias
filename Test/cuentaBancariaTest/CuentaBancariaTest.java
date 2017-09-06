@@ -24,16 +24,14 @@ public class CuentaBancariaTest {
 	
 	@Test
 	public void queRetireDineroYNoPueda() {
-		CuentaBancaria cb = new CuentaBancaria();
-		cb.ingresarDinero(3015.50);
+		CuentaBancaria cb = new CuentaBancaria(3015.50);
 		cb.retirarDinero(4000);
 		Assert.assertEquals(3015.50,cb.verSaldo(),0.0);
 	}
 	
 	@Test
 	public void queRetireDineroYPueda() {
-		CuentaBancaria cb = new CuentaBancaria();
-		cb.ingresarDinero(5000.75);
+		CuentaBancaria cb = new CuentaBancaria(5000.75);
 		cb.retirarDinero(2000.75);
 		Assert.assertEquals(3000, cb.verSaldo(),0.0);
 	}
