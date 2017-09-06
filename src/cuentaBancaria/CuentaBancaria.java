@@ -5,9 +5,9 @@ public class CuentaBancaria {
 	private double saldo;
 	private int nroCuenta;
 	
-	public CuentaBancaria(int nroCuenta, double saldo) {
+	public CuentaBancaria(int nroCuenta) {
 		this.nroCuenta = nroCuenta;
-		this.saldo = saldo;
+		this.saldo = 0;
 	}
 	
 	
@@ -31,10 +31,6 @@ public class CuentaBancaria {
 			return true;
 		}
 		return false;
-	}
-	
-	
-	
-	
+	}	
 		
 }
