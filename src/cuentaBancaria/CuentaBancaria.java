@@ -27,8 +27,10 @@ public class CuentaBancaria {
 	}
 	
 	public void transferirMontoHacia(double monto, CuentaBancaria cuentaDestino) {
+		if(this.saldo>=monto) {
 			this.saldo-=monto;
 			cuentaDestino.saldo+=monto;
+		}
 	}
 	
 	
