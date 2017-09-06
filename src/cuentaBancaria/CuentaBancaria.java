@@ -5,12 +5,9 @@ public class CuentaBancaria {
 	private double saldo;
 	private int nroCuenta;
 	
-	public CuentaBancaria() {
-		saldo = 0;
-	}
-	
-	public CuentaBancaria(double saldo) {
-		this.saldo=saldo;
+	public CuentaBancaria(int nroCuenta, double saldo) {
+		this.nroCuenta = nroCuenta;
+		this.saldo = saldo;
 	}
 	
 	
@@ -28,7 +25,7 @@ public class CuentaBancaria {
 	}
 	
 	public boolean transferirMontoHacia(double monto, CuentaBancaria cuentaDestino) {
-		if(this.saldo>=monto) {
+		if(this.saldo>=monto && this.nroCuenta != cuentaDestino.nroCuenta) {
 			this.saldo-=monto;
 			cuentaDestino.saldo+=monto;
 			return true;
