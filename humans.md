@@ -7,5 +7,5 @@
 
 ## Estudiantes
 
-* XXX ([xxx](https://github.com/xxx))
-* XXX ([xxx](https://github.com/xxx))
+* Micaela De Rito ([micaderito](https://github.com/micaderito))
+* Facundo Mediotte ([FMediotte96](https://github.com/FMediotte96))
