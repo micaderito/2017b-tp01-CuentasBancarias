@@ -3,6 +3,7 @@ package cuentaBancaria;
 public class CuentaBancaria {
 	
 	private double saldo;
+	private int nroCuenta;
 	
 	public CuentaBancaria() {
 		saldo = 0;
@@ -26,11 +27,13 @@ public class CuentaBancaria {
 			this.saldo-=monto;
 	}
 	
-	public void transferirMontoHacia(double monto, CuentaBancaria cuentaDestino) {
+	public boolean transferirMontoHacia(double monto, CuentaBancaria cuentaDestino) {
 		if(this.saldo>=monto) {
 			this.saldo-=monto;
 			cuentaDestino.saldo+=monto;
+			return true;
 		}
+		return false;
 	}
 	
 	

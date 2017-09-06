@@ -37,11 +37,26 @@ public class CuentaBancariaTest {
 	}
 	
 	@Test
-	public void queTransfieraDinero() {
+	public void queTransfieraDineroYNoPueda() {
 		CuentaBancaria cb = new CuentaBancaria(1000);
 		CuentaBancaria cb2 = new CuentaBancaria();
 		cb.transferirMontoHacia(2500, cb2);
 		Assert.assertEquals(1000, cb.verSaldo(),0.0);
 		Assert.assertEquals(0, cb2.verSaldo(),0.0);
+	}
+	
+	@Test
+	public void queTransfieraDineroYPueda() {
+		CuentaBancaria cb = new CuentaBancaria(10000);
+		CuentaBancaria cb2 = new CuentaBancaria();
+		cb.transferirMontoHacia(6000, cb2);
+		Assert.assertEquals(4000, cb.verSaldo(),0.0);
+		Assert.assertEquals(6000, cb2.verSaldo(),0.0);
+	}
+	
+	@Test
+	public void queNoSeAutoTransfieraDinero() {
+		CuentaBancaria cb = new CuentaBancaria(10000);
+		Assert.assertEquals(false, cb.transferirMontoHacia(6000, cb));
 	}
 }
