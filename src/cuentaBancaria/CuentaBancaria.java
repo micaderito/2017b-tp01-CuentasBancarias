@@ -21,7 +21,7 @@ public class CuentaBancaria {
 	}
 	
 	public void retirarDinero(double monto) {
-		if(this.saldo>=monto)
+		if(this.saldo>=monto && monto>0)
 			this.saldo-=monto;
 	}
 	
