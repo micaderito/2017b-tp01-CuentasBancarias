@@ -81,4 +81,11 @@ public class CuentaBancariaTest {
 		Assert.assertEquals(10000, cuentaOrigen.verSaldo(),0.0);
 		Assert.assertEquals(0, cuentaDestino.verSaldo(),0.0);
 	}
+	
+	@Test
+	public void queNoPuedaRetirarMontoNegativo() {
+		cuentaOrigen.ingresarDinero(1000);
+		cuentaOrigen.retirarDinero(-200);
+		Assert.assertEquals(1000, cuentaOrigen.verSaldo(),0.0);
+	}
 }
