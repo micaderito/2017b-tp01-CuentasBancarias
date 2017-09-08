@@ -65,4 +65,11 @@ public class CuentaBancariaTest {
 		cuentaOrigen.ingresarDinero(10000);
 		Assert.assertEquals(false, cuentaOrigen.transferirMontoHacia(6000, cuentaOrigen));
 	}
+	
+	@Test
+	public void queNoIngreseSaldoNegativo() {
+		cuentaOrigen.ingresarDinero(100);
+		cuentaOrigen.ingresarDinero(-500);
+		Assert.assertEquals(100, cuentaOrigen.verSaldo(),0.0);
+	}
 }
