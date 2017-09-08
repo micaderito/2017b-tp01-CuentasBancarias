@@ -26,7 +26,7 @@ public class CuentaBancaria {
 	}
 	
 	public boolean transferirMontoHacia(double monto, CuentaBancaria cuentaDestino) {
-		if(this.saldo>=monto && this.nroCuenta != cuentaDestino.nroCuenta) {
+		if(this.saldo>=monto && (this.nroCuenta != cuentaDestino.nroCuenta) && monto>0) {
 			this.saldo-=monto;
 			cuentaDestino.saldo+=monto;
 			return true;
