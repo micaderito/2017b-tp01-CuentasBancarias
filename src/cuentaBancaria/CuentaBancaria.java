@@ -16,7 +16,8 @@ public class CuentaBancaria {
 	}
 	
 	public void ingresarDinero(double monto) {
-		this.saldo+=monto;
+		if(monto>0)
+			this.saldo+=monto;
 	}
 	
 	public void retirarDinero(double monto) {
